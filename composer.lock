@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0c59e42eed4044d12d968b91f52dd18d",
+    "content-hash": "69785233417cca3c57c90c47ae87fa53",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -166,6 +166,41 @@
                 "markdown-extra"
             ],
             "time": "2017-07-16T21:13:23+00:00"
+        },
+        {
+            "name": "dmalchenko/yii2-unitpay-module",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dmalchenko/yii2-unitpay-module.git",
+                "reference": "2021e87bc944009688aca746f90021affb8e7450"
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "dmalchenko\\unitpay\\": "src"
+                }
+            },
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Dmitriy Malchenko",
+                    "email": "malchenko.dmotriy.by@gmail.com"
+                }
+            ],
+            "description": "Unitpay module for yii2",
+            "keywords": [
+                "extension",
+                "unit pay",
+                "unitpay",
+                "yii2"
+            ],
+            "time": "2017-12-03 10:06:44"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -3346,7 +3381,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "dmalchenko/yii2-unitpay-module": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
