@@ -14,6 +14,9 @@ class m171202_143449_user extends Migration
     {
         $this->createTable('user', [
             'id' => $this->primaryKey(),
+            'service' => $this->string(),
+            'service_id' => $this->string(),
+            'username' => $this->string(),
             'token' => $this->bigInteger(20),
             'balance' => $this->integer(),
             'data' => 'json',

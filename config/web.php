@@ -22,6 +22,7 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
+            'enableSession' => true,
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
@@ -47,6 +48,26 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'login/<service:google|facebook|vkontakte>' => 'auth/login',
+                'main/<action>' => 'main/<action>',
+            ],
+        ],
+        'eauth' => [
+            'class' => 'nodge\eauth\EAuth',
+            'popup' => true, // Use the popup window instead of redirecting.
+            'cache' => false, // Cache component name or false to disable cache. Defaults to 'cache' on production environments.
+            'cacheExpire' => 0, // Cache lifetime. Defaults to 0 - means unlimited.
+            'httpClient' => [
+                // uncomment this to use streams in safe_mode
+                //'useStreamsFallback' => true,
+            ],
+            'services' => [ // You can change the providers and their classes.
+                'vkontakte' => [
+                    // register your app here: https://vk.com/editapp?act=create&site=1
+                    'class' => 'nodge\eauth\services\VKontakteOAuth2Service',
+                    'clientId' => '6212174',
+                    'clientSecret' => 'BTwwa8XUUbB0GcK6hbVd',
+                ],
             ],
         ],
         'i18n' => [

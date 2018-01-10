@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use Yii;
+use yii\helpers\VarDumper;
 use yii\web\Controller;
 use yii\web\Response;
 use app\models\User;
@@ -16,7 +17,7 @@ class AuthController extends Controller {
      *
      * @return Response|string
      */
-    public function actionLogin() {
+    public function actionLoginOld() {
         $serviceName = Yii::$app->getRequest()->getQueryParam('service');
         if (isset($serviceName)) {
             /** @var $eauth \nodge\eauth\ServiceBase */
@@ -45,6 +46,12 @@ class AuthController extends Controller {
                 $eauth->redirect($eauth->getCancelUrl());
             }
         }
+    }
+
+    public function actionLogin() {
+        $service = Yii::$app->getRequest()->getQueryParam('service');
+        $id = Yii::$app->getRequest()->getQueryParam('id');
+
 
     }
 
